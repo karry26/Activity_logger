@@ -1,8 +1,8 @@
 # Activity_logger
 Importing:
 
-mysql -u databaseuser -p -h localhost –-default-character-set=utf8 databasename < sqlfile.sql
+mysql -u root -p -h activity_logger –-default-character-set=utf8 databasename < sqlfile.sql
 
 Dumpping:
 
-mysqldump -u databaseuser -p databasename --default-character-set=utf8 > sqlfile.sql
+mysqldump -u root -p activity_logger --default-character-set=utf8 > sqlfile.sql
