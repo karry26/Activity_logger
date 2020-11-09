@@ -1,6 +1,6 @@
 # Activity_logger
 
-#Steps To Run Your App
+###Steps To Run Your App
 1. Start the XAMPP server (Apache and Mysql)
 2. Clone the repository
 3. Import The .sql file with command given below
