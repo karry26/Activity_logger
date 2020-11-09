@@ -9,8 +9,10 @@
 5. To dump the database into sql file run the command.
   > mysqldump -u root -p activity_logger --default-character-set=utf8 > sqlfile.sql
 
-#Team
-Kairav Bansal B18062.
+# Team
+```
+Kairav Bansal B18062 <br>
+```
 Hridayesh Akhand B18057.
 Mohit Sharma B18071.
 Vishal Siwach B18091.
