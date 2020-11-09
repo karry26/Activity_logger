@@ -22,7 +22,7 @@
 
 # Team
 ```
-Kairav Bansal B18062 <br>
+Kairav Bansal B18062 
 Hridayesh Akhand B18057 
 Mohit Sharma B18071 
 Vishal Siwach B18091 
