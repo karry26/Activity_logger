@@ -3,9 +3,7 @@
 	$dbRef=mysqli_connect("localhost","root","","activity_logger");
 	
 	$msg=mysqli_connect_error();
-	if($msg=="")
-		echo "Connnnnected....,,.,.,.,";
-	else
+	if($msg!="")
 		echo $msg;
 	
 	/*Importing:
