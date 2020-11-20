@@ -75,7 +75,7 @@
 
 
     <!-- Modal -->
-    <form action=project-signup.php method="post" enctype="multipart/form-data">
+    <form action=views/project-signup.php method="post" enctype="multipart/form-data">
        
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
