@@ -33,7 +33,6 @@
                     
                              location.href="views/dashboard.php";
                        
-                    //$("#k").html(response);
                 });
             });
             
