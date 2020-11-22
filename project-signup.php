@@ -9,7 +9,7 @@ include_once("connect.php");
 	
 
 	$pwd=md5($pwd);
-	$query="insert into users values('','','$uid','$pwd' )";
+	$query="insert into users values('','','$uid','$pwd' ,'','user.png','','')";
 	mysqli_query($dbRef,$query);
 	$msg=mysqli_error($dbRef);
 	if($msg=="")

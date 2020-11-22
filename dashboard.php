@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["uid"]))
+{
+header("location:index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +27,18 @@
 <?php include_once("connect.php") ?>
 </head>
 <body>
-	<div class="container"> <h1>Your Contact List </h1><hr></div>
+   <h1>
+              Welcome: <?php echo $_SESSION["uid"]?>
+          </h1>
+	<div class="container"> <h1>Dashboard </h1>
+<hr>
+   <div> <a href="contacts.php"> Contacts</a></div>
+    <div> <a href="fixupmeeting.php"> Fix New Meeeting</a></div>
+   <div>  <a href="mail.php"> Mail Box</a></div>
+    <div> <a href="meetings.php"> Your Meetings</a></div>
+     <div> <a href="profile.php"> Your Profile</a></div>
+
+	</div>
 	
 </body>
 </html>

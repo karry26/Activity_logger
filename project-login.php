@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once("connect.php");
 		$uid=$_GET["uid"];
 		$pwd=$_GET["pwd"];

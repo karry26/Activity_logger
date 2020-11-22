@@ -17,7 +17,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
-<?php include_once("views/connect.php") ?>
+<?php include_once("connect.php") ?>
   <script>
         $(document).ready(function() {
 
@@ -27,11 +27,12 @@
                 var uid = $("#uidd").val();
                 var pwd = $("#pwdd").val();
  
-                $.get("views/project-login.php?uid="+uid+ "&pwd="+pwd, function(response){
+                $.get("project-login.php?uid="+uid+ "&pwd="+pwd, function(response){
                     // alert('2');
+                    if(response=="Create Account")
                     alert(response);
-                    
-                             location.href="views/dashboard.php";
+                    else
+                             location.href="dashboard.php";
                        
                 });
             });
@@ -74,7 +75,7 @@
 
 
     <!-- Modal -->
-    <form action=views/project-signup.php method="post" enctype="multipart/form-data">
+    <form action=project-signup.php method="post" enctype="multipart/form-data">
        
         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
