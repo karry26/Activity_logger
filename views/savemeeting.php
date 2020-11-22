@@ -1,6 +1,6 @@
 <?php
+session_start();
 include_once("connect.php");
-
 	$topic=$_POST["topic"];
 	$time=$_POST["time"];
 	$date=$_POST["date"];

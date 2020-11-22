@@ -17,10 +17,32 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
-<?php include_once("connect.php") ?>
 </head>
 <body>
 	<div class="container"> <h1>Meetings Held</h1><hr></div>
+  <?php 
+    //$servername = "localhost";
+    //$username = "root";
+    //$dbname = "activity_logger";
+
+    //$conn = new mysqli($servername, $username, $dbname);
+    // Check connection
+    //if ($conn->connect_error) {
+    //  die("Connection failed: " . $conn->connect_error);
+    //}
+    include_once("connect.php");
+
+    $sql = "SELECT * from meetings";
+    $result = $dbRef->query($sql);
+
+    if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+          echo "id: " . $row["date"]. " - Name: " . $row["time"]. " " . $row["admin"]. "<br>";
+      }
+    } else {
+    echo "0 results";
+    }
+  ?>
 	
 </body>
 </html>

@@ -41,7 +41,7 @@
     </script>
 </head>
 <body>
-
+<?php session_start() ?>
 
 
 <hr>
