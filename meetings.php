@@ -33,8 +33,9 @@
                                 <p class="card-text"><span class="text-danger"> Date : </span>{{oneObj.date}}</p>
                                 <p class="card-text"><span class="text-danger"> Time: </span>{{oneObj.time}}</p>
                                 <p class="card-text"><span class="text-danger"> Duration: </span>{{oneObj.duration}} min.</p>
+                                <p class="card-text"><span class="text-danger"> Minutes: </span>{{oneObj.minutes}}</p>
                                 <form action="editmeeting.php" method="post">
-                                <input type="hidden"  name="idd" value='{{oneObj.id}}'>
+                                <input type="hidden"  name="meetingid" value='{{oneObj.id}}'>
                                 <input type="submit" value="Edit">
                                 </form>
                                 
@@ -53,32 +54,19 @@
 <script >
    var module = angular.module("mymodule", []);
         module.controller("mycontroller", function($scope, $http) {
-           // console.log(1);
-           // console.log(1);
+
             $scope.pp = function()
-
-
             {
-               
                 $scope.jsonAry;
                 $http.get("fetch-meetings.php").then(fine, notfine);
 
-
                 function fine(response) {
-                    
                     $scope.jsonAry = response.data;
-                    //console.log( $scope.jsonAry[0].name);
                 }
-
                 function notfine(response) {
                     alert(JSON.stringify(response));
                 }
             }});
-        
-        
-
-       
-       
 
 </script>
 

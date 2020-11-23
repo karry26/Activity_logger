@@ -7,11 +7,10 @@ include_once("connect.php");
 	$duration=$_POST["duration"];
 	$admin = $_SESSION["uid"];
 
-	$query="insert into meetings values('$topic','$date','$time','$admin','$duration','')";
+	$query="insert into meetings values('$topic','$date','$time','$admin','$duration','','')";
 	mysqli_query($dbRef,$query);
 	$msg=mysqli_error($dbRef);
 	if($msg==""){
-			echo '<script>alert("skjhdf")</script>'; 
 			header("Location: ./dashboard.php");}
 	else
 			echo $msg;
