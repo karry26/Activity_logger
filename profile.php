@@ -51,7 +51,6 @@ session_start();
         //==-=-=-=-=-=-=-=-=-=
             function dofetch()
         {
-          alert("wow");
             var uid=$("#uid").val();
      
                 //var pwd=$("#pwd").val();

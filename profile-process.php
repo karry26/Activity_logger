@@ -41,7 +41,7 @@ include_once("connect.php");
     mysqli_query($dbRef,$query);
     $msg=mysqli_error($dbRef);
     if($msg=="")
-            echo "Record Updated....,.,.,.,.,.";
+            header("Location: ./dashboard.php");
     else
             echo $msg;
 

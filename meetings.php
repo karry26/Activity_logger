@@ -32,6 +32,11 @@
                                 <p class="card-text"><span class="text-danger"> Topic: </span>{{oneObj.topic}}</p>
                                 <p class="card-text"><span class="text-danger"> Date : </span>{{oneObj.date}}</p>
                                 <p class="card-text"><span class="text-danger"> Time: </span>{{oneObj.time}}</p>
+                                <p class="card-text"><span class="text-danger"> Duration: </span>{{oneObj.duration}} min.</p>
+                                <form action="editmeeting.php" method="post">
+                                <input type="hidden"  name="idd" value='{{oneObj.id}}'>
+                                <input type="submit" value="Edit">
+                                </form>
                                 
   </div>
   <br><br>

@@ -20,17 +20,31 @@
 
 </head>
 <body>
-
-	<div class="container"> <h1>Create New Meeting </h1>
+    <div class="container"> <h1>Create New Meeting </h1>
     <hr>
-  
-  <form action="./savemeeting.php" method="post">
-  <input type="text" name="topic"><br>
-  <input type="date" name="date"><br>
-  <input type="time" name="time"><br>
-  <input type="submit">
-  </div>
-  </form>
-
+        <form action="./savemeeting.php" method="post">
+            <div class="form-row">
+                <div class="col-md-12 form-group">
+                    <label for="inputEmail4">Topic</label>
+                    <input type="text" class="form-control" id="topic" placeholder="Topic Goes Here" name="topic">
+                </div>
+                <div class="col-md-12 form-group">
+                    <label for="inputEmail4">Date</label>
+                    <input type="date" class="form-control " id="date" name="date">
+                </div>
+                <div class="col-md-12 form-group">
+                    <label for="inputEmail4">Time</label>
+                    <input type="time" class="form-control " id="time" name="time">
+                </div>
+                <div class="col-md-12 form-group">
+                    <label for="inputEmail4">Duration</label>
+                    <input type="text" class="form-control " id="duration" name="duration" placeholder="Duration of the meeting">
+                </div>
+                <div class="modal-footer align-items-center">
+                    <input type="submit" class="btn btn-primary" name="submit" value="Save Meeting">
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
