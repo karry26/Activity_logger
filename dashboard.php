@@ -34,9 +34,10 @@ header("location:index.php");
 <hr>
    <div> <a href="contacts.php"> Contacts</a></div>
     <div> <a href="fixupmeeting.php"> Fix New Meeeting</a></div>
-   <div>  <a href="mail.php"> Mail Box</a></div>
+  
     <div> <a href="meetings.php"> Your Meetings</a></div>
      <div> <a href="profile.php"> Your Profile</a></div>
+     <div> <a href="logout.php"> Logout</a></div>
 
 	</div>
 	

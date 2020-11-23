@@ -1,8 +1,8 @@
--- MariaDB dump 10.18  Distrib 10.4.16-MariaDB, for Win64 (AMD64)
+-- MySQL dump 10.17  Distrib 10.3.16-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: activity_logger
 -- ------------------------------------------------------
--- Server version	10.4.16-MariaDB
+-- Server version	10.3.16-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -30,7 +30,7 @@ CREATE TABLE `history` (
   `prev_min` text DEFAULT NULL,
   `new_min` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,7 @@ CREATE TABLE `history` (
 
 LOCK TABLES `history` WRITE;
 /*!40000 ALTER TABLE `history` DISABLE KEYS */;
+INSERT INTO `history` VALUES (1,21,'umesh','karry26','kik','kik'),(2,21,'umesh','karry26','',''),(3,21,'umesh','karry26',' dsc',' dsc'),(4,21,'umesh','karry26',' ddsds',' ddsds'),(5,21,'umesh','karry26',' ddsds','1. We discussed a lot\r\n2. Great meeting');
 /*!40000 ALTER TABLE `history` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,7 +68,7 @@ CREATE TABLE `meetings` (
 
 LOCK TABLES `meetings` WRITE;
 /*!40000 ALTER TABLE `meetings` DISABLE KEYS */;
-INSERT INTO `meetings` VALUES ('Breakfast','2020-11-23','08:00:00','umesh',30,21,'new'),('DInner','2020-11-23','20:23:00','umesh',30,22,'df');
+INSERT INTO `meetings` VALUES ('Breakfast','2020-11-23','08:00:00','umesh',30,21,'1. We discussed a lot\r\n2. Great meeting'),('DInner','2020-11-23','20:23:00','umesh',30,22,'df');
 /*!40000 ALTER TABLE `meetings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,4 +132,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-23 22:38:30
+-- Dump completed on 2020-11-24  1:30:29

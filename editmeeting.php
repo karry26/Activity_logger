@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION["uid"]))
+{
+header("location:index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -12,18 +19,56 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	</head>
 
+	<script >
+		 $(document).ready(function(){
+            dofetch();
+           
+        //==-=-=-=-=-=-=-=-=-=
+            function dofetch()
+        {
+            var uid=$("#id").val();
+     
+                //var pwd=$("#pwd").val();
+                //"ajax-check-uid.php?uid="+uid+"&pwd="+pwd;
+                 
+                $.getJSON("json-fetch-meeting.php?id="+uid,function(aryJson)
+                {
+                    
+                
+                    
+                    $("#text").val(aryJson[0].minutes);
+         
+                    $("#name").html(aryJson[0].admin);
+                    $("#topic").html(aryJson[0].topic);
+                 })
+        }
+    });
+            
+      
+
+	</script>
 	<body>
-		<div id="mycontroller" ng-app="mymodule" ng-controller="mycontroller" ng-init=pp()>
+		<div class="container">
 			<div class="container"> <h1>Meetings Scheduled </h1><hr>
-				<div ng-repeat="oneObj in jsonAry " class="form row border border-dark mt-1">
+				
 					<div class="col-md-9">
-						<form action="saveminutes.php" method="post">
-		                    <input type="text"  name="minutes"	placeholder="Edit Description">
-		                    <input type='hidden' name='newid' value='<?php echo $_POST['meetingid'] ?>'>
+						<div class="form-row">
+							<div>Meeting Scheduled By : </div>
+							<div id="name"> </div>
+						</div>
+						<div class="form-row">
+							<div>Meeting Topic : </div>
+							<div id="topic"> </div>
+						</div>
+						<form action="saveminutes.php" method="post" >
+							<div>Edit Minutes</div>
+							<textarea rows=4 class="form-control" name="minutes" id="text"	placeholder="Edit Description"> </textarea>
+		                 
+		                    <input type='hidden' name='newid' id="id" value='<?php echo $_POST['meetingid'] ?>'>
 							<input type="submit" value="Save">
 		                </form>
 
-		            </div>
+		           
 		        </div>
 		    </div>
 		</div>

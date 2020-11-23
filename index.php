@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION["uid"]))
+{
+header("location:dashboard.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +49,7 @@
     </script>
 </head>
 <body>
-<?php session_start() ?>
+
 
 
 <hr>

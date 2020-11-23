@@ -29,27 +29,26 @@ header("location:index.php");
 
 </head>
 <body>
+   <input type="hidden" id="id" name="meetingid" value='<?php echo $_POST['meetingid'] ?>'>
 <div id="mycontroller" ng-app="mymodule" ng-controller="mycontroller" ng-init=pp()>
-  <div class="container"> <h1>Meetings Scheduled </h1><hr>
+  <div class="container"> <h1>Edit History </h1><hr>
 
 <div ng-repeat="oneObj in jsonAry " class="form row border border-dark mt-1">
   
-  <div class="col-md-9">
-   <p class="card-text"><span class="text-danger"> Scheduled By: </span>{{oneObj.admin}}</p>
-                                <p class="card-text"><span class="text-danger"> Topic: </span>{{oneObj.topic}}</p>
-                                <p class="card-text"><span class="text-danger"> Date : </span>{{oneObj.date}}</p>
-                                <p class="card-text"><span class="text-danger"> Time: </span>{{oneObj.time}}</p>
-                                <p class="card-text"><span class="text-danger"> Duration: </span>{{oneObj.duration}} min.</p>
-                                <p class="card-text"><span class="text-danger"> Minutes: </span>{{oneObj.minutes}}</p>
-                                <form action="editmeeting.php" method="post">
-                                <input type="hidden"  name="meetingid" value='{{oneObj.id}}'>
-                                <input type="submit" value="Edit">
-                                </form>
-                                <form action="edithistory.php" method="post">
-                                <input type="hidden"  name="meetingid" value='{{oneObj.id}}'>
+  <div class="col-md-9 ">
+   <p class="card-text"><span class="text-danger"> Edited By: </span>{{oneObj.edit_by}}</p>
+                               <div class="form row">
+                                <div class="col-md-6">
+                                  Edited To:
+                                  <textarea rows=2 cols ="40"> {{oneObj.new_min}} </textarea>
+
+                               </div>
+                               <div class="col-md-6">
+                                Edited From:
+                                  <textarea rows=2 cols=40> {{oneObj.prev_min}} </textarea>
+
+                               </div>
                                 
-                                <input type="submit" value="View Edit History" >
-                                </form>
                                 
   </div>
   <br><br>
@@ -69,20 +68,28 @@ header("location:index.php");
 
             $scope.pp = function()
             {
+            //
+            //alert(  $("#id").val());
+            var id=$("#id").val()
                 $scope.jsonAry;
-                $http.get("fetch-meetings.php").then(fine, notfine);
+                $http.get("fetch-history.php?id="+id).then(fine, notfine);
 
                 function fine(response) {
-                    $scope.jsonAry = response.data;
+                  alert(JSON.stringify(response.data));
+                  var myArray=response.data;
+                  var myReversedArray = new Array();
+                  $(myArray).each(function (key) {
+                     myReversedArray.unshift(myArray[key]);
+                     });
+                   myArray = myReversedArray;
+                    $scope.jsonAry = myArray;
+                  
                 }
                 function notfine(response) {
                     alert(JSON.stringify(response));
                 }
             }
-            $scope.edithis=function(id)
-            {
-              location.href='edithistory.php/id='+id;
-            }
+           
           });
         
 
