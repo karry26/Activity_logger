@@ -25,15 +25,15 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
 <script>
-        function showpreview(file,ref) 
+        function showpreview(file,ref)
         {
-       
+
             if($(file)[0].files[0].size>2097152)
                 {
                    // alert("<=2 MB");
                     return;
                 }
-        if (file.files && file.files[0]) 
+        if (file.files && file.files[0])
         {
             var reader = new FileReader();
             reader.onload = function (e) {
@@ -41,48 +41,81 @@
             }
             reader.readAsDataURL(file.files[0]);
         }
- 
+
     }
-     
+
     </script>
   <script>
     $(document).ready(function(){
             dofetch();
-           
+
         //==-=-=-=-=-=-=-=-=-=
             function dofetch()
         {
             var uid=$("#uid").val();
-     
-                 
+
+
                 $.getJSON("fetch-user.php?uid="+uid,function(aryJson)
                 {
-                   
-                    
+
+
                     $("#mobile").val(aryJson[0].mobile);
                     $("#name").val(aryJson[0].name);
                     $("#email").val(aryJson[0].email);
                   //  $("#dob").val(aryJson[0].dob);
                     $("#address").val(aryJson[0].address);
                     $("#designation").val(aryJson[0].designation);
-                    
-                     
 
-            var pic=aryJson[0].pic; 
-            $("#ppic").prop("src","uploads/"+pic);       
-            $("#hdn").val(pic);     
-            $("#dob").val(dob);     
+
+
+            var pic=aryJson[0].pic;
+            $("#ppic").prop("src","uploads/"+pic);
+            $("#hdn").val(pic);
+            $("#dob").val(dob);
                 });
-            
+
         }
-        
-    
-         
+
+
+
     });
-     
+
     </script>
+  </script>
+  <link href="./css/style-starter.css" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Nunito:400,600,700,800,900&amp;display=swap" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Hind&amp;display=swap" rel="stylesheet">
+  <style>
+  body {
+  background-image: url('./pics/1.jpg');
+  }
+  </style>
 </head>
 <body>
+  <section class="w3l-header-4">
+      <header id="headers4-block" class="editContent">
+          <div class="container">
+              <div class="d-grid nav-mobile-block header-align">
+                  <div class="logo">
+                      <a class="brand-logo editContent" href="index.php" style="outline: none; cursor: inherit;">Home</a>
+                  </div>
+                  <input type="checkbox" id="nav">
+                  <label class="nav" for="nav"></label>
+                  <nav>
+                      <label for="drop" class="toggle"><span class="fa fa-bars" style="outline: none; cursor: inherit;"></span></label>
+                      <input type="checkbox" id="drop">
+                      <ul class="menu">
+                          <li class="propClone"><a href="contacts.php">Contacts</a></li>
+                          <li class="propClone"><a href="fixupmeeting.php">Fix up Meeting</a></li>
+                          <li class="propClone"><a href="meetings.php">Your meetings</a></li>
+                         <li class="propClone"><a href="profile.php">Your profile</a></li>
+                         <li class="propClone"><a href="logout.php">logout</a></li>
+                      </ul>
+                  </nav>
+              </div>
+          </div>
+      </header>
+  </section>
    <div class="container">
         <div class="row">
             <div class="col-md-10 offset-md-1 text-center  bg-primary">
@@ -93,7 +126,7 @@
             <div class="col-md-10 offset-md-1 border">
                 <form action="profile-process.php"
                 method="post" name="frm" enctype="multipart/form-data">
-                 
+
                 <input type="hidden" name="hdn" id="hdn">
                     <div class="form-row">
                         <div class="col-md-8">
@@ -103,7 +136,7 @@
                                 <small id="errUid" class="form-text text-primary">error</small>
                             </div>
                         </div>
-                       
+
                     </div>
                     <div class="form-row">
                         <div class="col-md-6">
@@ -117,7 +150,7 @@
                             <div class="form-group">
                                 <label for="mobile">Mobile Number</label>
                                 <input type="text"  class="form-control" name="mobile" id="mobile" aria-describedby="emailHelp" placeholder="Enter mobile" >
-                               
+
                             </div>
                         </div>
                     </div>
@@ -132,36 +165,36 @@
                             <div class="form-group">
                                 <label for="email">Designation</label>
                                 <input type="text"  class="form-control" name="designation" id="designation" aria-describedby="emailHelp" placeholder="Enter mail" >
-                             
+
                             </div>
                         </div>
-                        
+
                     </div>
- 
-                    
-                   
- 
-                
-                       
+
+
+
+
+
+
                     <div class="form-row">
                         <div class="col-md-4 offset-md-4 form-group text-center">
                             Profile Pic: <br>
                             <img src="pics/userinfo.png" class="mt-1 mb-1" width="100" height="100" alt="" id="ppic">
                             <input type="file" accept="image/*" multiple name="pic" id="pic" onchange="showpreview(this,ppic);">
- 
+
                         </div>
                     </div>
- 
+
                     <div class="form-row">
                         <div class="col-md-12 text-center">
-                           
+
                             <input type="submit" value="Update"  name="btn"
                             id="btnUpdate" class="btn btn-primary">
-                           
+
                         </div>
                     </div>
                 </form>
- 
+
             </div>
         </div>
     </div>
