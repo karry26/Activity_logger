@@ -1,9 +1,9 @@
-<?php
-session_start();
-if(!isset($_SESSION["uid"]))
-{
-header("location:index.php");
-}
+//<?php
+//session_start();
+//if(!isset($_SESSION["uid"]))
+//{
+//header("location:index.php");
+//}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,24 +49,32 @@ header("location:index.php");
 	</script>
 	<body>
 		<div class="container">
-			<div class="container"> <h1>Meetings Scheduled </h1><hr>
+			<div class="container"> <h1>Edit Meetings  </h1><hr>
 				
 					<div class="col-md-9">
 						<div class="form-row">
-							<div>Meeting Scheduled By : </div>
-							<div id="name"> </div>
+							<h3>
+							<div class="text-primary">Meeting Scheduled By : </div></h3>
+							<h3><div id="name"> </div></h3>
 						</div>
+						<br>
 						<div class="form-row">
-							<div>Meeting Topic : </div>
-							<div id="topic"> </div>
+							<h3>
+							<div class="text-primary">Meeting Topic : </div></h3>
+							<h3><div id="topic"> </div></h3>
 						</div>
+						<br>
+						<div>
+
 						<form action="saveminutes.php" method="post" >
-							<div>Edit Minutes</div>
+							<div class="text-primary">Edit Minutes</div><br>
 							<textarea rows=4 class="form-control" name="minutes" id="text"	placeholder="Edit Description"> </textarea>
 		                 
 		                    <input type='hidden' name='newid' id="id" value='<?php echo $_POST['meetingid'] ?>'>
+		                    <br>
 							<input type="submit" value="Save">
 		                </form>
+		            </div>
 
 		           
 		        </div>
