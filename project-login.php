@@ -15,7 +15,7 @@
     // $row=mysqli_fetch_array($table);
     
     if($count==1){
-            session_start();
+          //  session_start();
             $row=mysqli_fetch_array($table);
             $_SESSION["uid"]=$uid;
 

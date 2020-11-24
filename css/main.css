@@ -158,7 +158,7 @@ iframe {
 
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
-.limiter {
+.login-reg-panel {
   width: 100%;
   margin: 0 auto;
 }
@@ -176,8 +176,9 @@ iframe {
   align-items: center;
   padding: 15px;
   background-repeat: no-repeat;
+  background-size: contain;
   background-position: center;
-  background-size: cover;
+
 }
 
 .wrap-login100 {
@@ -474,3 +475,4 @@ iframe {
     padding-right: 15px;
   }
 } 
+
