@@ -86,8 +86,7 @@ CREATE TABLE `users` (
   `pwd` varchar(50) NOT NULL,
   `designation` varchar(50) NOT NULL,
   `pic` varchar(100) NOT NULL,
-  `mobile` varchar(20) NOT NULL,
-  `dob` date NOT NULL
+  `mobile` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -97,7 +96,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('Kairav Bansal','kairavbansla@gmail.com','9988154700','kairav','','user.png','','0000-00-00'),('Umesh','email@email.com','umesh','13ceb369053f26c592bb4ae838714c33','done','Image.jpg','9876543210','0000-00-00'),('Kairav Bansal','kairavbansal@gmail.com','karry26','04b9df9145451d85b9214d420a92cde4','student','user.png','+919988154700','2020-11-04'),('Kairav Bansal','kairavbansal@gmail.com','dcc','3b11d4ed537ced20e41a9b8a067f5d85','sds','WIN_20200519_02_42_50_Pro.jpg','+919988154700','0000-00-00'),('','','umesh3','13ceb369053f26c592bb4ae838714c33','','user.png','','0000-00-00'),('','','umesh3','13ceb369053f26c592bb4ae838714c33','','user.png','','0000-00-00'),('','','umesh6','c8bc4cfa054ce163486f4c23b04d5d1d','','user.png','','0000-00-00'),('','','umesh6','c8bc4cfa054ce163486f4c23b04d5d1d','','user.png','','0000-00-00'),('','','aman','8276bff3d2bbd1f7c4c3c3b6981d0658','','user.png','','0000-00-00'),('','','aman','8276bff3d2bbd1f7c4c3c3b6981d0658','','user.png','','0000-00-00'),('','','aman','8276bff3d2bbd1f7c4c3c3b6981d0658','','user.png','','0000-00-00');
+INSERT INTO `users` VALUES ('Kairav Bansal','kairavbansla@gmail.com','9988154700','kairav','','user.png',''),('Umesh','email@email.com','umesh','13ceb369053f26c592bb4ae838714c33','done','Image.jpg','9876543210'),('Kairav Bansal','kairavbansal@gmail.com','karry26','04b9df9145451d85b9214d420a92cde4','student','user.png','+919988154700'),('Kairav Bansal','kairavbansal@gmail.com','dcc','3b11d4ed537ced20e41a9b8a067f5d85','sds','WIN_20200519_02_42_50_Pro.jpg','+919988154700'),('','','k11','ff5e2c3e7cff28f4d962d00130315149','','user.png',''),('Bansal','','karry11','04b9df9145451d85b9214d420a92cde4','','user.png','');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -132,4 +131,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-24  1:30:29
+-- Dump completed on 2020-11-24 15:31:35
