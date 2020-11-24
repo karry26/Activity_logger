@@ -116,6 +116,13 @@
           </div>
       </header>
   </section>
+  <section class="w3l-contact-breadcrum">
+  <div class="breadcrum-bg bg bg2" style="outline: none; cursor: inherit;">
+  <div class="container py-5">
+    <p class="editContent" style="outline: none; cursor: inherit;"><a class="editContent" href="dashboard.php">Dashboard</a> &nbsp; / &nbsp; profile</p>
+   </div>
+</div>
+</section>
    <div class="container">
         <div class="row">
             <div class="col-md-10 offset-md-1 text-center  bg-primary">
