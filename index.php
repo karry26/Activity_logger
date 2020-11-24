@@ -10,14 +10,25 @@ header("location:dashboard.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="pics/favicon.ico"/>
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="css/util.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+    <title>Activity Logger - login</title>
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"
- >
+<script src="https://code.jquery.com/jquery-3.3.1.min.js">
 </script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
 </script>
@@ -55,7 +66,7 @@ header("location:dashboard.php");
 <hr>
 
 
-    <div class=" container">
+    <!--div class=" container">
     	<h1> Activity Logger</h1>
         <div class="col-md-12">
             <nav class="navbar navbar-dark bg-dark  navbar-expand-lg ">
@@ -78,7 +89,55 @@ header("location:dashboard.php");
                 </div>
             </nav>
         </div>
-    </div>
+    </div-->
+
+    <div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-49">
+						Login
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+						<span class="label-input100">Username</span>
+						<input class="input100" type="text" name="username" placeholder="Type your username">
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Password</span>
+						<input class="input100" type="password" name="pass" placeholder="Type your password">
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Login
+							</button>
+						</div>
+					</div>
+
+					<div class="txt1 text-center p-t-54 p-b-20">
+						<span>
+							Don't have an account?
+						</span>
+					</div>
+
+					<div class="flex-c-m">
+						<a href="#" class="txt2">
+							Sign Up
+						</a>
+					</div>
+
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 
 
     <!-- Modal -->
