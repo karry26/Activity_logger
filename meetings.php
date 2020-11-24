@@ -1,9 +1,9 @@
 <?php
-session_start();
-if(!isset($_SESSION["uid"]))
-{
-header("location:index.php");
-}
+//session_start();
+//if(!isset($_SESSION["uid"]))
+//{
+//header("location:index.php");
+//}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,22 +34,23 @@ header("location:index.php");
 
 <div ng-repeat="oneObj in jsonAry " class="form row border border-dark mt-1">
   
-  <div class="col-md-9">
-   <p class="card-text"><span class="text-danger"> Scheduled By: </span>{{oneObj.admin}}</p>
-                                <p class="card-text"><span class="text-danger"> Topic: </span>{{oneObj.topic}}</p>
-                                <p class="card-text"><span class="text-danger"> Date : </span>{{oneObj.date}}</p>
-                                <p class="card-text"><span class="text-danger"> Time: </span>{{oneObj.time}}</p>
-                                <p class="card-text"><span class="text-danger"> Duration: </span>{{oneObj.duration}} min.</p>
-                                <p class="card-text"><span class="text-danger"> Minutes: </span>{{oneObj.minutes}}</p>
+  <div class="col-md-9" >
+   <h5><p class="card-text"><span class="text-danger"> Scheduled By: </span>{{oneObj.admin}}</p>
+                                 <p class="card-text" ><span class="text-danger"> Topic: </span>{{oneObj.topic}}</p>
+                                 <p class="card-text"><span class="text-danger"> Date : </span>{{oneObj.date}}</p>
+                                 <p class="card-text"><span class="text-danger"> Time: </span>{{oneObj.time}}</p>
+                                 <p class="card-text"><span class="text-danger"> Duration: </span>{{oneObj.duration}} min.</p>
+                                <p class="card-text"><span class="text-danger"> Minutes: </span>{{oneObj.minutes}}</p></h5>
                                 <form action="editmeeting.php" method="post">
                                 <input type="hidden"  name="meetingid" value='{{oneObj.id}}'>
                                 <input type="submit" value="Edit">
                                 </form>
                                 <form action="edithistory.php" method="post">
                                 <input type="hidden"  name="meetingid" value='{{oneObj.id}}'>
-                                
+                                <br>
                                 <input type="submit" value="View Edit History" >
-                                </form>
+
+                                </form><br>
                                 
   </div>
   <br><br>
