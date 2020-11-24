@@ -13,7 +13,6 @@ include_once("connect.php");
   
    // $dob= $_POST["dob"];
     $email=$_POST["email"];
-    $dob=$_POST["dob"];
   
      
   
@@ -36,7 +35,7 @@ include_once("connect.php");
     //echo "<h2>File Uploaded..</h2>";
      
    
-    $query="update  users set name='$name',email='$email',mobile='$mobile',designation='$des' ,  pic='$picname',dob='$dob' where uid='$uid'";
+    $query="update  users set name='$name',email='$email',mobile='$mobile',designation='$des' ,  pic='$picname' where uid='$uid'";
      
     mysqli_query($dbRef,$query);
     $msg=mysqli_error($dbRef);
