@@ -27,9 +27,7 @@ header("location:index.php");
 <script>
         function showpreview(file,ref) 
         {
-            //alert(document.getElementById("ppic").files.length);
-            //alert(document.getElementById("ppic").files[0].size);
-            //alert($(file)[0].files[0].size);
+       
             if($(file)[0].files[0].size>2097152)
                 {
                    // alert("<=2 MB");
@@ -56,8 +54,6 @@ header("location:index.php");
         {
             var uid=$("#uid").val();
      
-                //var pwd=$("#pwd").val();
-                //"ajax-check-uid.php?uid="+uid+"&pwd="+pwd;
                  
                 $.getJSON("fetch-user.php?uid="+uid,function(aryJson)
                 {
@@ -71,9 +67,7 @@ header("location:index.php");
                     $("#designation").val(aryJson[0].designation);
                     
                      
-                    //====================
-                 
-                //-=--=-=-=====
+
             var pic=aryJson[0].pic; 
             $("#ppic").prop("src","uploads/"+pic);       
             $("#hdn").val(pic);     
@@ -82,16 +76,7 @@ header("location:index.php");
             
         }
         
-        
-        
-        
-          
-        //=-=-===-===-=-=
-      /*  $("#btnSave").click(function(){
-            var res=confirm("R U Sure....");
-            if(res==true)
-                document.frm.submit();
-        });*/
+    
          
     });
      
@@ -137,28 +122,20 @@ header("location:index.php");
                         </div>
                     </div>
                     <div class='form-row'>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="text"  class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter mail" >
-                             
                             </div>
                         </div>
-                         <div class="col-md-4">
+                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="email">Designation</label>
                                 <input type="text"  class="form-control" name="designation" id="designation" aria-describedby="emailHelp" placeholder="Enter mail" >
                              
                             </div>
                         </div>
-                        <div class="col-md-4">
-                           <div class="form-group">
-                               <label for="dob">Date of Birth</label>
-                                <input  type="date"  class="form-control" name="dob" id="dob" aria-describedby="emailHelp" placeholder="d.o.b." >
-                               
-                           </div>
-                            
-                        </div>
+                        
                     </div>
  
                     

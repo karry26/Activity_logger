@@ -96,6 +96,10 @@ header("location:dashboard.php");
                     <div class="modal-body">
                         <div class="form-row">
                             <div class="col-md-12 form-group">
+                                <label for="inputEmail4">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name" name="name">
+                            </div>
+                            <div class="col-md-12 form-group">
                                 <label for="inputEmail4">Username</label>
                                 <input type="text" class="form-control" id="uid" placeholder="Username" name="uid">
                             </div>
@@ -103,6 +107,7 @@ header("location:dashboard.php");
                                 <label for="inputEmail4">Password</label>
                                 <input type="password" class="form-control " id="pwd" name="pwd" placeholder="Password" p>
                             </div>
+
 
                           
 
@@ -119,7 +124,7 @@ header("location:dashboard.php");
 
 
     </form>
-    <form action="views/project-login.php" 
+    <form action="project-login.php" 
 				method="get" enctype="multipart/form-data">
     <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
