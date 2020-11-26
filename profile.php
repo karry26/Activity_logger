@@ -85,11 +85,8 @@ header("location:index.php");
   <link href="./css/style-starter.css" rel="stylesheet" type="text/css">
   <link href="//fonts.googleapis.com/css?family=Nunito:400,600,700,800,900&amp;display=swap" rel="stylesheet">
   <link href="//fonts.googleapis.com/css?family=Hind&amp;display=swap" rel="stylesheet">
-  <style>
-  body {
-  background-image: url('./pics/1.jpg');
-  }
-  </style>
+  <link rel="stylesheet" href="./css/stylea.css">
+
 </head>
 <body>
   <section class="w3l-header-4">
@@ -116,83 +113,53 @@ header("location:index.php");
           </div>
       </header>
   </section>
-  <section class="w3l-contact-breadcrum">
-  <div class="breadcrum-bg bg bg2" style="outline: none; cursor: inherit;">
-  <div class="container py-5">
-    <p class="editContent" style="outline: none; cursor: inherit;"><a class="editContent" href="dashboard.php">Dashboard</a> &nbsp; / &nbsp; profile</p>
-   </div>
-</div>
-</section>
-   <div class="container">
-        <div class="row">
-            <div class="col-md-10 offset-md-1 text-center  bg-primary">
-                <h2>Profile </h2>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-md-10 offset-md-1 border">
-                <form action="profile-process.php"
-                method="post" name="frm" enctype="multipart/form-data">
 
-                <input type="hidden" name="hdn" id="hdn">
-                    <div class="form-row">
-                        <div class="col-md-8">
-                            <div class="form-group">
+<section>
+ <div class="banner-main">
+   <img src="img/2.jpg" alt="#"/>
+    <div class="text-bg">
+      <div class="container">
+                <form action="profile-process.php"
+                method="post" name="frm" enctype="multipart/form-data" class="main-form">
+                  <h3>Profile</h3>
+                  <div class="row">
+                     <div class="col-md-9">
+                        <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                 <label for="uid">UID</label>
                                 <input type="text"  required class="form-control" id="uid" name="uid" readonly placeholder="Enter User Id" value="<?php echo $_SESSION["uid"]?>">
                                 <small id="errUid" class="form-text text-primary">error</small>
                             </div>
-                        </div>
-
-                    </div>
-                    <div class="form-row">
-                        <div class="col-md-6">
-                            <div class="form-group">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                 <label for="name">Name</label>
                                 <input type="text"  class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Enter Name" >
                                 <small id="errPwd" class="form-text text-muted">*</small>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                 <label for="mobile">Mobile Number</label>
                                 <input type="text"  class="form-control" name="mobile" id="mobile" aria-describedby="emailHelp" placeholder="Enter mobile" >
-
-                            </div>
                         </div>
-                    </div>
-                    <div class='form-row'>
-                        <div class="col-md-6">
-                            <div class="form-group">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+
                                 <label for="email">Email</label>
                                 <input type="text"  class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Enter mail" >
-                            </div>
-                        </div>
-                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="email">Designation</label>
-                                <input type="text"  class="form-control" name="designation" id="designation" aria-describedby="emailHelp" placeholder="Enter mail" >
 
-                            </div>
+                        </div>
+                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+
+                                <label for="email">Designation</label>
+                                <input type="text"  class="form-control" name="designation" id="designation" aria-describedby="emailHelp" placeholder="student" >
+
                         </div>
 
                     </div>
-
-
-
-
-
-
-                    <div class="form-row">
+                  </div>
                         <div class="col-md-4 offset-md-4 form-group text-center">
                             Profile Pic: <br>
                             <img src="pics/userinfo.png" class="mt-1 mb-1" width="100" height="100" alt="" id="ppic">
                             <input type="file" accept="image/*" multiple name="pic" id="pic" onchange="showpreview(this,ppic);">
 
                         </div>
-                    </div>
-
-                    <div class="form-row">
                         <div class="col-md-12 text-center">
 
                             <input type="submit" value="Update"  name="btn"
@@ -201,9 +168,9 @@ header("location:index.php");
                         </div>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
+  </section>
 </body>
 </html>
