@@ -128,12 +128,12 @@ header("location:index.php");
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                 <label for="uid">UID</label>
                                 <input type="text"  required class="form-control" id="uid" name="uid" readonly placeholder="Enter User Id" value="<?php echo $_SESSION["uid"]?>">
-                                <small id="errUid" class="form-text text-primary">error</small>
+
                             </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                 <label for="name">Name</label>
                                 <input type="text"  class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Enter Name" >
-                                <small id="errPwd" class="form-text text-muted">*</small>
+                                
                             </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                 <label for="mobile">Mobile Number</label>
