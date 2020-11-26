@@ -18,9 +18,7 @@ header("location:index.php");
     <link href="//fonts.googleapis.com/css?family=Nunito:400,600,700,800,900&amp;display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Hind&amp;display=swap" rel="stylesheet">
     <style>
-body {
-  background-image: url('./pics/1.jpg');
-}
+
 </style>
 </head>
 
@@ -29,9 +27,39 @@ body {
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+<script>
+ $(document).ready(function() {
+        
+             loadFunctions();
+            function loadFunctions() {
+                // alert(1);
+                $.getJSON("fetch-contact.php", function(jsonAry) {
+                  //alert(jsonAry);;
+                    var i;
+                    for (i = 0; i < jsonAry.length; i++) {
+
+                        var item = document.createElement("option");
+                        item.text = jsonAry[i].name;
+                        item.value = jsonAry[i].uid;
+
+                        //alert(document.getElementById("users"));
+                        if(item.text!="")
+                        document.getElementById("users1").append(item);
+                    }
+                     $('select').selectpicker();
+                });
+            }
+          // 
+            
+          });
 
 
-<?php include_once("connect.php") ?>
+          </script>
+
+
 
 </head>
 <body>
@@ -79,7 +107,20 @@ body {
                     <label for="inputEmail4">Duration</label>
                     <input type="text" class="form-control " id="duration" name="duration" placeholder="Duration of the meeting">
                 </div>
-                <div class="modal-footer align-items-center">
+                 <div class="col-md-12 form-group">
+                    <label for="inputEmail4">Users</label>
+                    <select  id="users1" class=" form-control" name="users[]" multiple data-live-search="true" >
+                      
+                   </select>
+           
+                </div>
+            
+            
+
+
+
+
+     <div class="modal-footer align-items-center">
                     <input type="submit" class="btn btn-primary" name="submit" value="Save Meeting">
                 </div>
             </div>
