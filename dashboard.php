@@ -15,14 +15,13 @@ header("location:index.php");
 
     <link rel="stylesheet" href="components/bootstrap2/css/bootstrap.css">
 	<link rel="stylesheet" href="components/bootstrap2/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" href="css/calendar.css">
-
 	<style>
         body
         {
 			background-image: url('pics/b8.jpg');
 			background-size: cover;
-
         }
     </style>
 </head>
@@ -63,10 +62,10 @@ header("location:index.php");
       <h4 style="float: right; width: 50%; text-align: right;" class="banner-text mt-5 editContent">
       <img src="pics/images.png" class="mt-1 mb-1" width="60" height="60" alt="" id="ppic"><br>
        <?php echo $_SESSION["uid"]?> <br /> <br /></h4>
-    <br><br>
+    
 	<div class="page-header">
-
-		<div class="pull-right form-inline">
+		<h3></h3>
+		<div class="form-inline">
 			<div class="btn-group">
 				<button class="btn btn-primary" data-calendar-nav="prev"><< Prev</button>
 				<button class="btn" data-calendar-nav="today">Today</button>
@@ -80,7 +79,7 @@ header("location:index.php");
 			</div>
 		</div>
 
-		<h3></h3>
+		
 
 	</div>
 
@@ -92,7 +91,7 @@ header("location:index.php");
 			<div class="row-fluid">
 
 				<label class="checkbox">
-					<input type="checkbox" value="#events-modal" id="events-in-modal"> Open events in modal window
+					<input type="checkbox" value="#events-modal" id="events-in-modal" > Open events in modal window
 				</label>
 				<label class="checkbox">
 					<input type="checkbox" id="format-12-hours"> 12 Hour format

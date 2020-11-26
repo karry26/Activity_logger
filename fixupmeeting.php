@@ -17,6 +17,7 @@ header("location:index.php");
         <link href="./css/style-starter.css" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Nunito:400,600,700,800,900&amp;display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Hind&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <style>
 
 </style>
