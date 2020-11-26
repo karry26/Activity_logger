@@ -7,7 +7,7 @@
 		view: 'month',
 		tmpl_path: 'tmpls/',
 		tmpl_cache: false,
-		day: '2013-03-12',
+		day: '2020-11-26',
 		onAfterEventsLoad: function(events) {
 			if(!events) {
 				return;
@@ -19,6 +19,8 @@
 				$(document.createElement('li'))
 					.html('<a href="' + val.url + '">' + val.title + '</a>')
 					.appendTo(list);
+					
+
 			});
 		},
 		onAfterViewLoad: function(view) {

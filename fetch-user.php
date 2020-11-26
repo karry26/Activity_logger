@@ -9,7 +9,8 @@
         {
             $ary[]=$row;
         }
-        echo json_encode($ary); 
-                 
+        
+          
+        echo json_encode($ary);
              
             ?>

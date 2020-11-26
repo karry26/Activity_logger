@@ -28,7 +28,7 @@ header("location:index.php");
 </head>
 
 
-<?php include_once("connect.php") ?>
+
 
 <body>
   <section class="w3l-header-4">
@@ -106,7 +106,7 @@ header("location:index.php");
 			</div>
 
 			<h4>Events</h4>
-			<ul id="eventlist" class="nav nav-list"></ul>
+			<ul id="eventlist" class=""></ul>
 		</div>
 	</div>
 
@@ -132,6 +132,27 @@ header("location:index.php");
 	<script type="text/javascript" src="components/jstimezonedetect/jstz.min.js"></script>
 	<script type="text/javascript" src="js/calendar.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
+	<script>
+    $(document).ready(function(){
+            dofetch();
+
+        //==-=-=-=-=-=-=-=-=-=
+            function dofetch()
+        {
+     // alert(1);
+                $.getJSON("fetch-event.php",function(aryJson)
+                {
+              	alert(JSON.stringify(aryJson));
+
+                });
+
+        }
+
+
+
+    });
+
+    </script>
 
 </div>
 

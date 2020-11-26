@@ -48,7 +48,7 @@ header("location:index.php");
   <script>
     $(document).ready(function(){
             dofetch();
-
+//alert(Date.now());
         //==-=-=-=-=-=-=-=-=-=
             function dofetch()
         {

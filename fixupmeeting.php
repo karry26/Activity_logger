@@ -104,7 +104,7 @@ header("location:index.php");
                     <input type="time" class="form-control " id="time" name="time">
                 </div>
                 <div class="col-md-12 form-group">
-                    <label for="inputEmail4">Duration</label>
+                    <label for="inputEmail4">Duration (in minutes)</label>
                     <input type="text" class="form-control " id="duration" name="duration" placeholder="Duration of the meeting">
                 </div>
                  <div class="col-md-12 form-group">
