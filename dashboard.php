@@ -10,19 +10,19 @@ header("location:index.php");
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    
+
     <link href="./css/style-starter.css" rel="stylesheet" type="text/css">
-    
+
     <link rel="stylesheet" href="components/bootstrap2/css/bootstrap.css">
 	<link rel="stylesheet" href="components/bootstrap2/css/bootstrap-responsive.css">
 	<link rel="stylesheet" href="css/calendar.css">
 
 	<style>
-        body 
+        body
         {
-			background-image: url('pics/2.jpg');
+			background-image: url('pics/b8.jpg');
 			background-size: cover;
-            
+
         }
     </style>
 </head>
@@ -55,12 +55,15 @@ header("location:index.php");
           </div>
       </header>
   </section>
-  
+
 
 
  <div class="container">
-    <h3 class="banner-text mt-5 editContent">Welcome : <?php echo $_SESSION["uid"]?>
-    <br></br>
+    <h1 style="float: left; width: 50%;" class="banner-text mt-5 editContent">Welcome!<br /> <br /></h1>
+      <h4 style="float: right; width: 50%; text-align: right;" class="banner-text mt-5 editContent">
+      <img src="pics/images.png" class="mt-1 mb-1" width="60" height="60" alt="" id="ppic"><br>
+       <?php echo $_SESSION["uid"]?> <br /> <br /></h4>
+    <br><br>
 	<div class="page-header">
 
 		<div class="pull-right form-inline">
@@ -78,7 +81,7 @@ header("location:index.php");
 		</div>
 
 		<h3></h3>
-		
+
 	</div>
 
 	<div class="row">
@@ -87,7 +90,7 @@ header("location:index.php");
 		</div>
 		<div class="span3">
 			<div class="row-fluid">
-				
+
 				<label class="checkbox">
 					<input type="checkbox" value="#events-modal" id="events-in-modal"> Open events in modal window
 				</label>
