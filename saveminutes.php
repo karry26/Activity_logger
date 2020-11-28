@@ -22,10 +22,9 @@
 		
 		$query__="insert into history (meeting_id,admin,edit_by,prev_min,new_min) values ($idd,'$admin','$user','$new_minutes','$input')";
 		mysqli_query($dbRef,$query__);
-		echo $query__;
-
+        echo header("Location: ./meetings.php");
+    
 		}
 	else
 		echo $msg;
 ?>
-
