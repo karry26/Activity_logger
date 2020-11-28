@@ -9,31 +9,25 @@ header("location:index.php");
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-      <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="./css/style-starter.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Nunito:400,600,700,800,900&amp;display=swap" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Hind&amp;display=swap" rel="stylesheet">
-    <style>
-body {
-  background-image: url('./pics/1.jpg');
-}
-</style>
+    <title>Dashboard</title>
+
+    <link href="./css/style-starter.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="components/bootstrap2/css/bootstrap.css">
+	<link rel="stylesheet" href="components/bootstrap2/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="css/calendar.css">
+	<style>
+        body
+        {
+			background-image: url('pics/b8.jpg');
+			background-size: cover;
+        }
+    </style>
 </head>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"
- >
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-</script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-</script>
-<?php include_once("connect.php") ?>
-</head>
+
+
+
 
 <body>
   <section class="w3l-header-4">
@@ -60,24 +54,106 @@ body {
           </div>
       </header>
   </section>
-  <section class="w3l-main-banner" id="home">
-   <div class="companies20-content">
-     <div class="companies-wrapper">
-         <div class="item">
 
-             <div class="slider-info banner-view text-center bg bg2">
-               <div class="banner-info container">
-                 <img src="pics/study.jpg" alt="about image" class="img-fluid" style="outline: none; cursor: inherit;"width="375" height="450">
-                 <h3 class="banner-text mt-5 editContent">Welcome : <?php echo $_SESSION["uid"]?>
-                   </h3>
 
-               </div>
-             </div>
 
-         </div>
-     </div>
-   </div>
- </section>
+ <div class="container">
+    <h1 style="float: left; width: 50%;" class="banner-text mt-5 editContent">Welcome!<br /> <br /></h1>
+      <h4 style="float: right; width: 50%; text-align: right;" class="banner-text mt-5 editContent">
+      <img src="pics/images.png" class="mt-1 mb-1" width="60" height="60" alt="" id="ppic"><br>
+       <?php echo $_SESSION["uid"]?> <br /> <br /></h4>
+    
+	<div class="page-header">
+		<h3></h3>
+		<div class="form-inline">
+			<div class="btn-group">
+				<button class="btn btn-primary" data-calendar-nav="prev"><< Prev</button>
+				<button class="btn" data-calendar-nav="today">Today</button>
+				<button class="btn btn-primary" data-calendar-nav="next">Next >></button>
+			</div>
+			<div class="btn-group">
+				<button class="btn btn-warning" data-calendar-view="year">Year</button>
+				<button class="btn btn-warning active" data-calendar-view="month">Month</button>
+				<button class="btn btn-warning" data-calendar-view="week">Week</button>
+				<button class="btn btn-warning" data-calendar-view="day">Day</button>
+			</div>
+		</div>
+
+		
+
+	</div>
+
+	<div class="row">
+		<div class="span8">
+			<div id="calendar"></div>
+		</div>
+		<div class="span3">
+			<div class="row-fluid">
+
+				<label class="checkbox">
+					<input type="checkbox" value="#events-modal" id="events-in-modal" > Open events in modal window
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" id="format-12-hours"> 12 Hour format
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" id="show_wb" checked> Show week box
+				</label>
+				<label class="checkbox">
+					<input type="checkbox" id="show_wbn" checked> Show week box number
+				</label>
+			</div>
+
+			<h4>Events</h4>
+			<ul id="eventlist" class=""></ul>
+		</div>
+	</div>
+
+	<div class="clearfix"></div>
+	<br><br>
+	<br><br>
+
+	<div class="modal hide fade" id="events-modal">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Event</h3>
+		</div>
+		<div class="modal-body" style="height: 400px">
+		</div>
+		<div class="modal-footer">
+			<a href="#" data-dismiss="modal" class="btn">Close</a>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="components/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="components/underscore/underscore-min.js"></script>
+	<script type="text/javascript" src="components/bootstrap2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="components/jstimezonedetect/jstz.min.js"></script>
+	<script type="text/javascript" src="js/calendar.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script>
+    $(document).ready(function(){
+            dofetch();
+
+        //==-=-=-=-=-=-=-=-=-=
+            function dofetch()
+        {
+     // alert(1);
+                $.getJSON("fetch-event.php",function(aryJson)
+                {
+              	alert(JSON.stringify(aryJson));
+
+                });
+
+        }
+
+
+
+    });
+
+    </script>
+
+</div>
 
 </body>
 </html>

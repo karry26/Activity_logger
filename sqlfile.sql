@@ -16,6 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `events`
+--
+
+DROP TABLE IF EXISTS `events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL,
+  `title` varchar(500) NOT NULL,
+  `url` varchar(50) NOT NULL,
+  `class` varchar(50) NOT NULL,
+  `start` varchar(50) NOT NULL,
+  `end` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `events`
+--
+
+LOCK TABLES `events` WRITE;
+/*!40000 ALTER TABLE `events` DISABLE KEYS */;
+INSERT INTO `events` VALUES (0,'LAP2','meetings.php','event-warning','1606534680000','1606536480000'),(20,'Time Pass','http://www.example.com/','event-warning','1606415799450','1606416799450');
+/*!40000 ALTER TABLE `events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `history`
 --
 
@@ -58,8 +86,9 @@ CREATE TABLE `meetings` (
   `duration` int(11) DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `minutes` text DEFAULT NULL,
+  `users` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +97,7 @@ CREATE TABLE `meetings` (
 
 LOCK TABLES `meetings` WRITE;
 /*!40000 ALTER TABLE `meetings` DISABLE KEYS */;
-INSERT INTO `meetings` VALUES ('Breakfast','2020-11-23','08:00:00','umesh',30,21,'1. We discussed a lot\r\n2. Great meeting'),('DInner','2020-11-23','20:23:00','umesh',30,22,'df');
+INSERT INTO `meetings` VALUES ('Breakfast','2020-11-23','08:00:00','umesh',30,21,'1. We discussed a lot\r\n2. Great meeting',''),('DInner','2020-11-23','20:23:00','umesh',30,22,'df',''),('LAP','2020-11-12','18:14:00','karry26',30,26,'','karry11;karry26'),('LAP2','2020-11-28','04:38:00','karry26',30,34,'','karry26;kkk');
 /*!40000 ALTER TABLE `meetings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +115,8 @@ CREATE TABLE `users` (
   `pwd` varchar(50) NOT NULL,
   `designation` varchar(50) NOT NULL,
   `pic` varchar(100) NOT NULL,
-  `mobile` varchar(20) NOT NULL
+  `mobile` varchar(20) NOT NULL,
+  PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -96,30 +126,8 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('Kairav Bansal','kairavbansla@gmail.com','9988154700','kairav','','user.png',''),('Umesh','email@email.com','umesh','13ceb369053f26c592bb4ae838714c33','done','Image.jpg','9876543210'),('Kairav Bansal','kairavbansal@gmail.com','karry26','04b9df9145451d85b9214d420a92cde4','student','user.png','+919988154700'),('Kairav Bansal','kairavbansal@gmail.com','dcc','3b11d4ed537ced20e41a9b8a067f5d85','sds','WIN_20200519_02_42_50_Pro.jpg','+919988154700'),('','','k11','ff5e2c3e7cff28f4d962d00130315149','','user.png',''),('Bansal','','karry11','04b9df9145451d85b9214d420a92cde4','','user.png','');
+INSERT INTO `users` VALUES ('Kairav Bansal','kairavbansla@gmail.com','9988154700','kairav','','user.png',''),('Kairav Bansal','kairavbansal@gmail.com','dcc','3b11d4ed537ced20e41a9b8a067f5d85','sds','WIN_20200519_02_42_50_Pro.jpg','+919988154700'),('','','k11','ff5e2c3e7cff28f4d962d00130315149','','user.png',''),('Bansal','','karry11','04b9df9145451d85b9214d420a92cde4','','user.png',''),('Kairav Bansal','kairavbansal@gmail.com','karry26','04b9df9145451d85b9214d420a92cde4','student','user.png','+919988154700'),('bansal1','','kkk','04b9df9145451d85b9214d420a92cde4','','user.png',''),('Umesh','email@email.com','umesh','13ceb369053f26c592bb4ae838714c33','done','Image.jpg','9876543210');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `users2`
---
-
-DROP TABLE IF EXISTS `users2`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `users2` (
-  `name` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `users2`
---
-
-LOCK TABLES `users2` WRITE;
-/*!40000 ALTER TABLE `users2` DISABLE KEYS */;
-INSERT INTO `users2` VALUES ('kairav');
-/*!40000 ALTER TABLE `users2` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -131,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-24 15:31:35
+-- Dump completed on 2020-11-27  1:09:55
