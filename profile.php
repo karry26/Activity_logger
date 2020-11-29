@@ -118,7 +118,7 @@ header("location:index.php");
 
 <section>
  <div class="banner-main">
-   <img src="img/2.jpg" alt="#"/>
+   <img src="pics/b8.jpg" alt="#"/ style="width:100%">
     <div class="text-bg">
       <div class="container">
                 <form action="profile-process.php"
@@ -135,7 +135,7 @@ header("location:index.php");
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                 <label for="name">Name</label>
                                 <input type="text"  class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="Enter Name" >
-                                
+
                             </div>
                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
                                 <label for="mobile">Mobile Number</label>
@@ -157,7 +157,7 @@ header("location:index.php");
                     </div>
                   </div>
                         <div class="col-md-4 offset-md-4 form-group text-center">
-                            Profile Pic: <br>
+                            Your Profile Photo: <br>
                             <img src="pics/userinfo.png" class="mt-1 mb-1" width="100" height="100" alt="" id="ppic">
                             <input type="file" accept="image/*" multiple name="pic" id="pic" onchange="showpreview(this,ppic);">
 

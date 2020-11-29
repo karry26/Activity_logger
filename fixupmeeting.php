@@ -21,6 +21,63 @@ header("location:index.php");
     <style>
 
 </style>
+<style>
+      body
+      {
+    background-image: url('pics/b8.jpg');
+    background-size: cover;
+      }
+
+      .form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  background-color: White;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
+.form-inline input[type=submit] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+  </style>
 </head>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -28,12 +85,12 @@ header("location:index.php");
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-   
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 <script>
  $(document).ready(function() {
-        
+
              loadFunctions();
             function loadFunctions() {
                 // alert(1);
@@ -53,8 +110,8 @@ header("location:index.php");
                      $('select').selectpicker();
                 });
             }
-          // 
-            
+          //
+
           });
 
 
@@ -88,41 +145,42 @@ header("location:index.php");
           </div>
       </header>
   </section>
-    <div class="container"> <h1>Create New Meeting </h1>
+    <br />
+    <div class="container"> <h1>Schedule New Meeting </h1>
     <hr>
-        <form action="./savemeeting.php" method="post">
+        <form class="form-inline" action="./savemeeting.php" method="post">
             <div class="form-row">
                 <div class="col-md-12 form-group">
-                    <label for="inputEmail4">Topic</label>
+                    <label for="inputEmail4" style="float: left;">Topic:</label>
                     <input type="text" class="form-control" id="topic" placeholder="Topic Goes Here" name="topic">
                 </div>
                 <div class="col-md-12 form-group">
-                    <label for="inputEmail4">Date</label>
+                    <label for="inputEmail4">Date:</label>
                     <input type="date" class="form-control " id="date" name="date">
                 </div>
                 <div class="col-md-12 form-group">
-                    <label for="inputEmail4">Time</label>
+                    <label for="inputEmail4">Time:</label>
                     <input type="time" class="form-control " id="time" name="time">
                 </div>
                 <div class="col-md-12 form-group">
-                    <label for="inputEmail4">Duration (in minutes)</label>
+                    <label for="inputEmail4">Duration (in minutes):</label>
                     <input type="text" class="form-control " id="duration" name="duration" placeholder="Duration of the meeting">
                 </div>
                  <div class="col-md-12 form-group">
-                    <label for="inputEmail4">Users</label>
+                    <label for="inputEmail4">Users:</label>
                     <select  id="users1" class=" form-control" name="users[]" multiple data-live-search="true" >
-                      
+
                    </select>
-           
+
                 </div>
-            
-            
+
+
 
 
 
 
      <div class="modal-footer align-items-center">
-                    <input type="submit" class="btn btn-primary" name="submit" value="Save Meeting">
+                    <input type="submit"  name="submit" value="Save Meeting">
                 </div>
             </div>
         </form>
