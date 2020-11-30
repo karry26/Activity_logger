@@ -17,20 +17,17 @@ include_once("connect.php");
 	$time1=explode(":", $time);
 	$mili=$mili2+$time1[0]*1000*3600 + $time1[1]*60*1000;
 	$mili1=$mili+$duration*60*1000;
-//var n = d.getMilliseconds();
-	$query1="insert into events values ('','$topic','meetings.php','event-warning','$mili',$mili1)";
+	//var n = d.getMilliseconds();
+	
+	$query1="insert into events values ('$topic','meetings.php','event-warning','$mili','$mili1','')";
 	mysqli_query($dbRef,$query);
 	$msg=mysqli_error($dbRef);
 	mysqli_query($dbRef,$query1);
 	$msg1=mysqli_error($dbRef);
-	if($msg=="" && $msg1=""){
-		
-		//echo $date;
-		echo header("Location: ./dashboard.php");}
-	
-		//
-		
-			//
+
+	if($msg || $msg1)
+		echo $msg.$msg1;
 	else
-			echo $msg.$msg1;
+		header("Location: ./dashboard.php");
+		
 ?> 
