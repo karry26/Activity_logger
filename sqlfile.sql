@@ -1,13 +1,13 @@
--- MySQL dump 10.17  Distrib 10.3.16-MariaDB, for Win64 (AMD64)
+-- MariaDB dump 10.18  Distrib 10.4.16-MariaDB, for Win64 (AMD64)
 --
 -- Host: localhost    Database: activity_logger
 -- ------------------------------------------------------
--- Server version	10.3.16-MariaDB
+-- Server version	10.4.16-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,14 +23,14 @@ DROP TABLE IF EXISTS `events`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `events` (
-  `id` int(11) NOT NULL,
   `title` varchar(500) NOT NULL,
   `url` varchar(50) NOT NULL,
   `class` varchar(50) NOT NULL,
   `start` varchar(50) NOT NULL,
   `end` varchar(50) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `events` (
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` VALUES (0,'LAP2','meetings.php','event-warning','1606534680000','1606536480000'),(20,'Time Pass','http://www.example.com/','event-warning','1606415799450','1606416799450');
+INSERT INTO `events` VALUES ('LAP2','meetings.php','event-warning','1606534680000','1606536480000',1),('Time Pass','http://www.example.com/','event-warning','1606415799450','1606416799450',2),('Sample Meeting 2','meetings.php','event-warning','1606906800000','1606908600000',3);
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -58,7 +58,7 @@ CREATE TABLE `history` (
   `prev_min` text DEFAULT NULL,
   `new_min` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `history` (
 
 LOCK TABLES `history` WRITE;
 /*!40000 ALTER TABLE `history` DISABLE KEYS */;
-INSERT INTO `history` VALUES (1,21,'umesh','karry26','kik','kik'),(2,21,'umesh','karry26','',''),(3,21,'umesh','karry26',' dsc',' dsc'),(4,21,'umesh','karry26',' ddsds',' ddsds'),(5,21,'umesh','karry26',' ddsds','1. We discussed a lot\r\n2. Great meeting');
+INSERT INTO `history` VALUES (1,21,'umesh','karry26','kik','kik'),(2,21,'umesh','karry26','',''),(3,21,'umesh','karry26',' dsc',' dsc'),(4,21,'umesh','karry26',' ddsds',' ddsds'),(5,21,'umesh','karry26',' ddsds','1. We discussed a lot\r\n2. Great meeting'),(6,26,'karry26','sampleuser','','changed herer'),(7,26,'karry26','sampleuser','changed herer','new changes 2'),(8,26,'karry26','sampleuser','new changes 2','new changes 3');
 /*!40000 ALTER TABLE `history` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,7 +88,7 @@ CREATE TABLE `meetings` (
   `minutes` text DEFAULT NULL,
   `users` varchar(500) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -97,7 +97,7 @@ CREATE TABLE `meetings` (
 
 LOCK TABLES `meetings` WRITE;
 /*!40000 ALTER TABLE `meetings` DISABLE KEYS */;
-INSERT INTO `meetings` VALUES ('Breakfast','2020-11-23','08:00:00','umesh',30,21,'1. We discussed a lot\r\n2. Great meeting',''),('DInner','2020-11-23','20:23:00','umesh',30,22,'df',''),('LAP','2020-11-12','18:14:00','karry26',30,26,'','karry11;karry26'),('LAP2','2020-11-28','04:38:00','karry26',30,34,'','karry26;kkk');
+INSERT INTO `meetings` VALUES ('LAP','2020-11-12','18:14:00','karry26',30,26,'new changes 3','karry11;karry26'),('LAP2','2020-11-28','04:38:00','karry26',30,34,'','karry26;kkk'),('Sample Meeting','2020-12-02','12:00:00','umesh',30,35,'','dcc;karry26;umesh');
 /*!40000 ALTER TABLE `meetings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,7 +126,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('Kairav Bansal','kairavbansla@gmail.com','9988154700','kairav','','user.png',''),('Kairav Bansal','kairavbansal@gmail.com','dcc','3b11d4ed537ced20e41a9b8a067f5d85','sds','WIN_20200519_02_42_50_Pro.jpg','+919988154700'),('','','k11','ff5e2c3e7cff28f4d962d00130315149','','user.png',''),('Bansal','','karry11','04b9df9145451d85b9214d420a92cde4','','user.png',''),('Kairav Bansal','kairavbansal@gmail.com','karry26','04b9df9145451d85b9214d420a92cde4','student','user.png','+919988154700'),('bansal1','','kkk','04b9df9145451d85b9214d420a92cde4','','user.png',''),('Umesh','email@email.com','umesh','13ceb369053f26c592bb4ae838714c33','done','Image.jpg','9876543210');
+INSERT INTO `users` VALUES ('Kairav Bansal','kairavbansal@gmail.com','dcc','3b11d4ed537ced20e41a9b8a067f5d85','sds','WIN_20200519_02_42_50_Pro.jpg','+919988154700'),('Kairav Bansal','kairavbansal@gmail.com','karry26','04b9df9145451d85b9214d420a92cde4','student','user.png','+919988154700'),('namehere','email@email.com','sampleuser','5f4dcc3b5aa765d61d8327deb882cf99','students','bg.jpg','9876543210'),('Umesh','email@email.com','umesh','13ceb369053f26c592bb4ae838714c33','done','Image.jpg','9876543210');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -139,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-27  1:09:55
+-- Dump completed on 2020-11-30 13:09:23
